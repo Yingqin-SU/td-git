@@ -39,27 +39,39 @@ def nombre_0():
 
 def addition():
     global nombre1, nombre2, op
-    nombre2 = float(nombre1)
-    nombre1 = ''
-    op = 1
+    if nombre1 == '':
+        pass
+    else:
+        nombre2 = float(nombre1)
+        nombre1 = ''
+        op = 1
 
 def soustraction():
     global nombre1, nombre2, op
-    nombre2 = float(nombre1)
-    nombre1 = ''
-    op = 2
+    if nombre1 == '':
+        pass
+    else:
+        nombre2 = float(nombre1)
+        nombre1 = ''
+        op = 2
 
 def multiplication():
     global nombre1, nombre2, op
-    nombre2 = float(nombre1)
-    nombre1 = ''
-    op = 3
+    if nombre1 == '':
+        pass
+    else:
+        nombre2 = float(nombre1)
+        nombre1 = ''
+        op = 3
 
 def division():
     global nombre1, nombre2, op
-    nombre2 = float(nombre1)
-    nombre1 = ''
-    op = 4
+    if nombre1 == '':
+        pass
+    else:
+        nombre2 = float(nombre1)
+        nombre1 = ''
+        op = 4
 
 def egale():
     global nombre1, nombre_final
@@ -73,7 +85,10 @@ def egale():
     elif op == 4:
         nombre_final = nombre2 / nombre1
     nombre1 = nombre_final
-    label['text'] = nombre1
+    if nombre1 == int(nombre1):
+        label['text'] = int(nombre1)
+    else:
+        label['text'] = nombre1
 
 def effacer():
     global nombre1
@@ -81,50 +96,51 @@ def effacer():
     label['text'] = nombre1
 
 main = tk.Tk()
-main.geometry("400x300+400+300")
+main.geometry("165x165+300+300")
 main.title('calc')
+main.resizable(False, False)
 
-label = tk.Label(main, text='0')
-label.grid(column=0, row=0, rowspan = 2, columnspan = 2)
+label = tk.Label(main, text='0', background='#C1D7F0',width=20, height=2)
+label.grid(column=0, row=0, rowspan = 2, columnspan = 4)
 
 button_1 = tk.Button(main, text="1", command=nombre_1)
-button_1.grid(column=1, row=6)
+button_1.grid(column=0, row=6)
 button_2 = tk.Button(main, text="2", command=nombre_2)
-button_2.grid(column=2, row=6)
+button_2.grid(column=1, row=6)
 button_3 = tk.Button(main, text="3", command=nombre_3)
-button_3.grid(column=3, row=6)
+button_3.grid(column=2, row=6)
 button_4 = tk.Button(main, text="4", command=nombre_4)
-button_4.grid(column=1, row=5)
+button_4.grid(column=0, row=5)
 button_5 = tk.Button(main, text="5", command=nombre_5)
-button_5.grid(column=2, row=5)
+button_5.grid(column=1, row=5)
 button_6 = tk.Button(main, text="6", command=nombre_6)
-button_6.grid(column=3, row=5)
+button_6.grid(column=2, row=5)
 button_7 = tk.Button(main, text="7", command=nombre_7)
-button_7.grid(column=1, row=4)
+button_7.grid(column=0, row=4)
 button_8 = tk.Button(main, text="8", command=nombre_8)
-button_8.grid(column=2, row=4)
+button_8.grid(column=1, row=4)
 button_9 = tk.Button(main, text="9", command=nombre_9)
-button_9.grid(column=3, row=4)
+button_9.grid(column=2, row=4)
 button_0 = tk.Button(main, text="0", command=nombre_0)
-button_0.grid(column=2, row=7)
+button_0.grid(column=1, row=7)
 
 button_multiplier = tk.Button(main, text="*", command=multiplication)
-button_multiplier.grid(column=4, row=5)
+button_multiplier.grid(column=3, row=5)
 
 button_diviser = tk.Button(main, text="/", command=division)
-button_diviser.grid(column=4, row=4)
+button_diviser.grid(column=3, row=4)
 
 button_ajouter = tk.Button(main, text="+", command=addition)
-button_ajouter.grid(column=4, row=6)
+button_ajouter.grid(column=3, row=6)
 
 button_soustraire = tk.Button(main, text="-", command=soustraction)
-button_soustraire.grid(column=4, row=7)
+button_soustraire.grid(column=3, row=7)
 
 button_effacer = tk.Button(main, text="C", command=effacer)
-button_effacer.grid(column=1, row=7)
+button_effacer.grid(column=0, row=7)
 
 button_egal = tk.Button(main, text="=", command=egale)
-button_egal.grid(column=3, row=7)
+button_egal.grid(column=2, row=7)
 
 
 main.mainloop()
