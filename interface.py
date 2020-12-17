@@ -1,0 +1,31 @@
+import tkinter as tk
+
+main = tk.Tk()
+main.geometry("400x300+400+300")
+main.title('calc')
+
+button = tk.Button(main,text="0")
+button.grid()
+button = tk.Button(main,text="1")
+button.grid()
+button = tk.Button(main,text="2")
+button.grid()
+button = tk.Button(main,text="3")
+button.grid()
+button = tk.Button(main,text="4")
+button.grid()
+button = tk.Button(main,text="5")
+button.grid()
+button = tk.Button(main,text="6")
+button.grid()
+button = tk.Button(main,text="7")
+button.grid()
+button = tk.Button(main,text="8")
+button.grid()
+button = tk.Button(main,text="9")
+button.grid()
+button = tk.Button(main,text="C")
+button.grid()
+
+main.mainloop()
+
